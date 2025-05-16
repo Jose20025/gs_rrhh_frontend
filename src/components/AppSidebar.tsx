@@ -1,4 +1,15 @@
-import { UserCircleIcon, LogOutIcon, HomeIcon } from 'lucide-react';
+import { useAuthStore } from '@/stores/auth.store';
+import {
+  BoltIcon,
+  ClipboardIcon,
+  HammerIcon,
+  HotelIcon,
+  LogOutIcon,
+  PaperclipIcon,
+  UserCircleIcon,
+  UsersIcon,
+} from 'lucide-react';
+import { SidebarItem } from './SidebarItem';
 import { Button } from './ui/button';
 import {
   Sidebar,
@@ -10,15 +21,40 @@ import {
   SidebarMenu,
   SidebarMenuItem,
 } from './ui/sidebar';
-import { SidebarItem } from './SidebarItem';
-import { useAuthStore } from '@/stores/auth.store';
 
 const links = {
   GENERAL: [
     {
-      href: '/',
-      title: 'Inicio',
-      icon: HomeIcon,
+      href: '/departamentos',
+      title: 'Departamentos',
+      icon: HotelIcon,
+    },
+    {
+      href: '/cargos',
+      title: 'Cargos',
+      icon: BoltIcon,
+    },
+    {
+      href: '/profesiones',
+      title: 'Profesiones',
+      icon: HammerIcon,
+    },
+    {
+      href: '/grados-instruccion',
+      title: 'Grados de Instrucción',
+      icon: PaperclipIcon,
+    },
+  ],
+  EMPLEADOS: [
+    {
+      href: '/empleados',
+      title: 'Empleados',
+      icon: UsersIcon,
+    },
+    {
+      href: '/reportes/empleados',
+      title: 'Reportes',
+      icon: ClipboardIcon,
     },
   ],
 };
@@ -54,7 +90,7 @@ export const AppSidebar = () => {
           <UserCircleIcon className="text-foreground/70" size={28} />
 
           <span className="text-foreground/70 text-base font-semibold">
-            {user?.name}
+            {user?.nombre}
           </span>
         </SidebarMenuItem>
 

@@ -1,17 +1,9 @@
 import type { User } from '@/types/user';
 import type { LoginSchema } from './auth.schema';
+import { apiClient } from '@/config/axios.config';
 
 export const login = async (credentials: LoginSchema) => {
-  // TODO: Implementar el método de login
-  const userMock: User = {
-    id: 1,
-    name: 'Joseca',
-    username: 'joseca',
-  };
+  const response = await apiClient.post<User>('/usuarios/login', credentials);
 
-  return new Promise<User>((resolve) => {
-    setTimeout(() => {
-      resolve(userMock);
-    }, 1000);
-  });
+  return response.data;
 };

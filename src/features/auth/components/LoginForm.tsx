@@ -27,7 +27,7 @@ export const LoginForm = () => {
   const form = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      username: '',
+      usuario: '',
       password: '',
     },
   });
@@ -72,10 +72,10 @@ export const LoginForm = () => {
         <div className="grid gap-4">
           <FormField
             control={form.control}
-            name="username"
+            name="usuario"
             render={({ field }) => (
               <FormItem className="grid">
-                <FormLabel htmlFor="username">Usuario</FormLabel>
+                <FormLabel htmlFor="usuario">Usuario</FormLabel>
 
                 <FormControl>
                   <Input {...field} autoFocus />

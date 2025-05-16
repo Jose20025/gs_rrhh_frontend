@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 export const loginSchema = z.object({
-  username: z
+  usuario: z
     .string({ required_error: 'El usuario es requerido' })
     .min(1, { message: 'El usuario es requerido' }),
   password: z

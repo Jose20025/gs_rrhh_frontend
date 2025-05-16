@@ -1,4 +1,4 @@
-import kaisLogo from '@/assets/images/kais-white-logo.png';
+import logo from '@/assets/images/logo.png';
 import { LoginForm } from '../components';
 
 export const LoginPage = () => {
@@ -14,9 +14,9 @@ export const LoginPage = () => {
 
       <section className="bg-kais-primary relative">
         <img
-          src={kaisLogo}
-          alt="KAIS Logo"
-          className="absolute inset-0 h-full w-full object-contain p-10"
+          src={logo}
+          alt="Logo"
+          className="absolute inset-0 m-auto object-contain p-10"
         />
       </section>
     </div>
