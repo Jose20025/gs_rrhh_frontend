@@ -4,6 +4,7 @@ import { LoginPage } from './features/auth/pages';
 import { RouteGuardian } from './features/auth/components';
 import { DepartamentosPage } from './features/departamentos/pages/DepartamentosPage';
 import { CargosPage } from './features/cargos/pages/CargosPage';
+import { ProfesionesPage } from './features/profesiones/pages';
 
 export const AppRoutes = () => {
   return (
@@ -21,6 +22,9 @@ export const AppRoutes = () => {
 
               {/* Cargos */}
               <Route path="cargos" element={<CargosPage />} />
+
+              {/* Profesiones */}
+              <Route path="profesiones" element={<ProfesionesPage />} />
             </Route>
           </Route>
         </Route>
